@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>아낀시간 영수증 시연판</title>
+<style>
+:root{--bg:#f4f6fa;--card:#fff;--ink:#191f28;--sub:#6b7684;--line:#e5e8eb;--pri:#3182f6;--warn:#fff4e5;--warnink:#8a4b00}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 -apple-system,"Apple SD Gothic Neo","Noto Sans KR",sans-serif}
+main{max-width:860px;margin:0 auto;padding:20px 16px 60px}
+h1{font-size:24px;margin:8px 0 4px}h2{font-size:18px;margin:0 0 10px}
+.card{background:var(--card);border-radius:16px;padding:20px;margin:14px 0;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.banner{background:var(--warn);color:var(--warnink);border-radius:12px;padding:12px 14px;font-size:14px}
+label{display:block;font-size:14px;color:var(--sub);margin:10px 0 4px}
+select,input,textarea{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:10px;font:inherit;background:#fff;color:var(--ink)}
+textarea{min-height:150px;font:13px/1.45 ui-monospace,Menlo,monospace}
+.grid{display:grid;grid-template-columns:1fr 120px;gap:8px;align-items:center}
+button{background:var(--pri);color:#fff;border:0;border-radius:12px;padding:12px 18px;font:600 16px inherit;cursor:pointer;margin:8px 8px 0 0}
+button.ghost{background:#e8f3ff;color:var(--pri)}
+table{width:100%;border-collapse:collapse;font-size:15px}th,td{padding:9px 8px;border-bottom:1px solid var(--line);text-align:right}
+th:first-child,td:first-child{text-align:left}th{color:var(--sub);font-weight:600;font-size:13px}
+.big{font-size:30px;font-weight:700}.sub{color:var(--sub);font-size:13px}
+.badge{display:inline-block;border-radius:8px;padding:2px 8px;font-size:12px;font-weight:700;margin-left:6px;vertical-align:middle}.b-ai{background:#e3f8ec;color:#0b6b3a}.b-rule{background:#eceff3;color:#4e5968}
+.receipt{border:2px dashed var(--line);border-radius:12px;padding:16px}
+@media(max-width:520px){.grid{grid-template-columns:1fr 90px}}
+</style></head><body><main>
+<h1>아낀시간 영수증</h1>
+<div class="sub">말로 쓴 업무 설명 &rarr; AI가 업무·건당 분 구조화 &rarr; 메신저 기록 붙여넣기 &rarr; AI가 자동 분류 &rarr; 주간 영수증. 처리마다 「AI」 또는 「규칙」 표기가 붙습니다.</div>
+<div class="banner" id="banner">시연용 합성(비식별) 글이 채워져 있습니다. 실제 사업장 측정값이 아닙니다. AI 단계는 입력한 글을 이 컴퓨터의 시연 서버를 거쳐 모델에 보냅니다. 이름·전화번호 같은 개인정보는 넣지 마십시오.</div>
+<div class="sub" id="mode" style="margin-top:8px"></div>
+
+<section class="card"><h2>1. 5분 진단 &mdash; 하루 업무를 말로 쓰기</h2>
+<label for="ind">업종</label><select id="ind"></select>
+<label for="desc">하루 업무 설명 (사장님이 말하듯 쓰면 됩니다)</label>
+<textarea id="desc" style="font:15px/1.5 inherit;min-height:100px">점심때 예약 전화랑 카톡 문의가 하루 10건쯤 와요. 한 건 답하는 데 4분쯤 걸려요. 손님 리뷰는 일주일에 15개 정도 답글을 달고, 발주서랑 재고 메모는 주 5번, 인스타 공지는 주 4번 올립니다.</textarea>
+<button id="btnAi">AI로 진단하기</button><button class="ghost" id="btnDiag">기준표로 진단하기(규칙)</button>
+<details style="margin-top:10px"><summary>기준표에 건수를 직접 입력하기</summary><div id="diag"></div></details>
+<div id="diagOut" style="margin-top:12px" aria-live="polite"></div></section>
+
+<section class="card"><h2>2. AI 도구 하나 켜고, 실행 기록 붙이기</h2>
+<div class="sub">메신저·도구 기록을 형식 없이 그대로 붙여 넣으십시오. 날짜가 있으면 쓰고, 없으면 아래 시작일로 계산합니다. 줄마다 업무와 성공/실패를 AI가 가립니다.</div>
+<label for="log">실행 기록 (합성 예시)</label><textarea id="log">손님: 오늘 저녁 6시에 4명 자리 있나요? / 봇: 가능합니다, 6시 예약 도와드렸습니다
+손님: 주말 영업시간이 어떻게 되나요 / 봇: 토요일 11시부터 21시까지입니다
+리뷰 별점 5개 '맛있어요' 감사 댓글 게시
+리뷰 별점 2개 불만 후기에 사과 답글 초안 게시
+발주서 초안 생성 후 거래처 전송 오류로 실패
+내일 쓸 양파 계란 남은 개수 사장님께 보냄
+인스타 신메뉴 소개 글 초안 작성
+손님: 단체 예약 가능한가요? / 봇: 담당자 확인 후 답변 못함 실패
+직원 근무표 수정
+추석 연휴 휴무 공지 문구 작성
+손님: 룸 있나요 / 봇: 4인 룸 가능합니다
+리뷰에 감사 댓글 게시
+가스 점검 일정 확인</textarea>
+<label for="start">기록 시작일 (날짜 없는 줄에 쓰입니다)</label><input id="start" type="date" value="2026-10-05">
+<label for="wage">시급(원) &mdash; 기본값은 2026년 최저시급</label><input id="wage" type="number" value="10320" min="0">
+<button id="btnRc">영수증 만들기(AI 분류)</button><button class="ghost" id="btnLoad">합성 149줄 불러오기</button><button class="ghost" id="btnFree">형식 없는 예시 13줄</button><button class="ghost" id="btnClear">기록 비우기</button></section>
+
+<section class="card" id="out" aria-live="polite"></section>
+<section class="card" id="measuredCard"><h2>4. 실사업장 1곳 실기록 영수증 &mdash; 지도사 결과보고서 칸 출력</h2>
+<div class="sub">위 1~3은 합성(비식별) 시연입니다. 이 4번만 제안자 본인 1인 사업체가 AI와 실제로 운영한 작업 기록(시작·종료 시각)을 종류별로 센 <b>실측 집계</b>입니다. 실측은 건수와 소요 분뿐이고, 사람이 직접 했을 때의 분은 측정하지 않아 절감 시간·원 환산은 내지 않습니다. 내용·이름·금액은 집계에 없습니다.</div>
+<button id="btnMeasured">실기록 영수증 보기</button>
+<div id="measuredOut" aria-live="polite" style="margin-top:12px"></div></section>
+
+</main>
+<script src="core.js"></script><script src="ai.js"></script><script src="data/sample-log-synthetic.js"></script><script src="data/measured-aggregate.js"></script>
+<script>
+var R=Receipt,A=ReceiptAI,SAMPLE_DIAG={'식당':{reserve:40,review:15,order:5,sns:4}};
+var $=function(i){return document.getElementById(i)},ind=$('ind'),diagBox=$('diag'),server=null,state={table:null,diag:null,diagSource:'규칙'};
+Object.keys(R.TABLE).forEach(function(k){var o=document.createElement('option');o.textContent=k;ind.appendChild(o)});
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function badge(src,model){return '<span class="badge '+(src==='AI'?'b-ai':'b-rule')+'">'+(src==='AI'?'AI'+(model?' '+esc(model):''):'규칙')+'</span>'}
+function noModel(){return Promise.reject(new Error('시연 서버 없음'))}
+function post(path,body){return fetch(path,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}).then(function(r){if(!r.ok)throw new Error('서버 '+r.status);return r.json()})}
+function checkServer(){return fetch('/api/status').then(function(r){return r.json()}).then(function(j){server=j}).catch(function(){server=null}).then(function(){
+ $('mode').innerHTML=server&&server.ai?'AI 연결됨 '+badge('AI',server.model)+' 이 화면의 AI 단계는 실제 모델을 호출합니다.':'AI 꺼짐 '+badge('규칙')+' 시연 서버와 API 키가 없어 모든 단계가 규칙으로 동작합니다(실패해도 영수증은 나옵니다).'})}
+function buildDiag(){diagBox.innerHTML='';var t=R.TABLE[ind.value],pre=SAMPLE_DIAG[ind.value]||{};
+ Object.keys(t).forEach(function(c){var d=document.createElement('div');d.className='grid';
+  d.innerHTML='<span>'+t[c].name+' <span class="sub">(수작업 '+t[c].manual+'분 &rarr; 확인 '+t[c].after+'분)</span></span><input type="number" min="0" data-code="'+c+'" value="'+(pre[c]||'')+'" aria-label="'+t[c].name+' 주당 건수">';
+  diagBox.appendChild(d)})}
+function answers(){return Array.prototype.map.call(diagBox.querySelectorAll('input'),function(i){return {code:i.dataset.code,perWeek:i.value===''?0:Number(i.value)}})}
+function showDiag(d,src,model,note){state.diag=d;state.diagSource=src;
+ var h='<div>진단 결과'+badge(src,model)+'</div><table id="diagT"><tr><th>순위</th><th>업무</th><th>주당 건수</th><th>추정 절감(분/주)</th><th>AI 도구 후보</th></tr>';
+ d.top3.forEach(function(x,i){h+='<tr><td>'+(i+1)+'</td><td>'+esc(x.name)+'</td><td>'+x.perWeek+'</td><td>'+x.estMinPerWeek+'</td><td style="text-align:left">'+esc((x.tools||[]).join(', ')||'-')+'</td></tr>'});
+ h+='</table><div class="sub">건당 분과 도구 후보는 '+(src==='AI'?'모델이 설명에서 추정한 값이며 실측이 아닙니다.':'기준표(작성자 가정값)에서 가져온 값입니다.')+' 다음 행동: 1위 업무 하나만 AI 도구를 켜십시오.</div>';
+ if(note)h+='<div class="sub">'+esc(note)+'</div>';$('diagOut').innerHTML=h}
+function ruleLocal(){var d=R.diagnose(ind.value,answers());state.table=R.TABLE[ind.value];showDiag(d,'규칙')}
+$('btnDiag').onclick=function(){try{ruleLocal();render()}catch(e){$('diagOut').textContent='오류: '+e.message}};
+$('btnAi').onclick=function(){$('diagOut').textContent='모델이 업무를 구조화하는 중...';
+ var p=server?post('/api/diagnose',{industry:ind.value,text:$('desc').value}):A.diagnoseAI(noModel,ind.value,$('desc').value);
+ p.catch(function(){return A.diagnoseAI(noModel,ind.value,$('desc').value)}).then(function(r){
+  if(r.empty){ruleLocal();$('diagOut').insertAdjacentHTML('beforeend','<div class="sub">설명에서 업무와 건수를 읽지 못해 기준표 입력으로 진단했습니다'+(r.error?' ('+esc(r.error)+')':'')+'.</div>');render();return}
+  state.table=r.table;showDiag(r.diag,r.source,r.model,r.source==='규칙'?'모델 호출이 안 돼 규칙으로 처리했습니다'+(r.error?' ('+r.error+')':'')+'.':'');render()})};
+function won(n){return R.won(n)}
+function render(){var out=$('out');var lines=$('log').value.split('\n');
+ if(!lines.filter(function(l){return l.trim()}).length){out.innerHTML='<h2>3. 주간 영수증</h2><div class="sub">실행 기록을 붙이면 영수증이 나옵니다.</div>';return}
+ out.innerHTML='<div class="sub">기록을 분류하는 중...</div>';
+ var table=state.table||R.TABLE[ind.value],diag=state.diag||R.diagnose(ind.value,answers());
+ var p=server?post('/api/classify',{table:table,lines:lines}):A.classifyAI(noModel,table,lines);
+ p.catch(function(){return A.classifyAI(noModel,table,lines)}).then(function(c){
+  var rc=R.receipt(lines,{industry:ind.value,table:table,wage:$('wage').value,diagnosis:diag,lenient:true,fallbackDate:$('start').value,codes:c.codes,statuses:c.statuses,sources:c.sources});
+  var allAi=rc.counted+rc.failed+rc.unclassified, aiLines=c.sources.filter(function(s,i){return lines[i].trim()&&s==='AI'}).length, n=lines.filter(function(l){return l.trim()}).length;
+  var h='<h2>3. 주간 영수증 &mdash; <span id="period">'+rc.start+' ~ '+rc.end+' ('+rc.weeks+'주)</span></h2><div class="receipt">';
+  h+='<div class="sub">분류 출처: <span id="src">AI '+aiLines+'줄 · 규칙 '+(n-aiLines)+'줄</span>'+badge(aiLines===n?'AI':'규칙',c.model)+(c.errors&&c.errors.length?' (모델 호출 실패 '+c.errors.length+'건 &rarr; 규칙으로 처리)':'')+'</div>';
+  h+='<div class="sub" style="margin-top:8px">진단 추정 대 영수증 집계 (주당 분)</div><table id="gap"><tr><th>업무</th><th>진단 추정</th><th>영수증 집계</th><th>달성률</th></tr>';
+  rc.gap.rows.forEach(function(g){h+='<tr><td>'+esc(g.name)+'</td><td>'+g.est+'</td><td>'+(g.actual===null?'미실행':g.actual)+'</td><td>'+(g.rate===null?'-':g.rate+'%')+'</td></tr>'});
+  h+='</table><div class="sub">켠 업무 기준 달성률 '+(rc.gap.rateTurnedOn===null?'-':rc.gap.rateTurnedOn+'%')+'</div>';
+  h+='<p class="big" id="won">'+rc.hours+'시간 &rarr; '+won(rc.won)+'</p>';
+  h+='<div class="sub">아낀 시간 '+rc.totalMinutes+'분 &divide; 60 &times; 시급 '+won(rc.wage)+'. 2027년 시급 '+won(R.WAGE_2027)+' 적용 시 '+won(rc.wonAt2027)+'.</div>';
+  h+='<table><tr><th>집계</th><th>실패</th><th>미분류</th><th>형식 오류</th></tr><tr><td>'+rc.counted+'건</td><td>'+rc.failed+'</td><td>'+rc.unclassified+'</td><td>'+rc.malformed+'</td></tr></table>';
+  h+='<details style="margin-top:10px"><summary>지도사용: 결과보고서 칸에 옮겨 적을 문단</summary><pre id="consult" style="white-space:pre-wrap;font-size:13px">'+esc(R.consultantBlock(rc,'(사장님이 켠 AI 도구명)')+'\n분류 출처: AI '+aiLines+'줄·규칙 '+(n-aiLines)+'줄 / 업무·건당 분 출처: '+state.diagSource)+'</pre></details>';
+  h+='<p class="sub" id="note">※ '+esc(rc.note)+(state.diagSource==='AI'?' 이번 진단의 건당 분은 모델이 설명에서 추정한 값입니다.':'')+'</p></div>';
+  out.innerHTML=h}).catch(function(e){out.textContent='오류: '+e.message})}
+$('btnMeasured').onclick=function(){var o=$('measuredOut');try{var m=R.measuredReceipt(MEASURED_AGG),sv=R.supervisorReport(m),fp=R.firstReceiptPath();
+ var h='<div class="receipt"><div class="sub">실측 · 기간 '+m.start+' ~ '+m.end+' (작업이 있던 날 '+m.activeDays+'일) · 표본 '+m.sample+'건 · 업무 종류 '+m.kinds+'가지</div><table id="mrows"><tr><th>업무 종류</th><th>건수</th><th>소요(분)</th><th>건당 중앙값(분)</th></tr>';
+ m.rows.forEach(function(r){h+='<tr><td>'+esc(r.name)+'</td><td>'+r.count+'</td><td>'+r.minutes+'</td><td>'+r.median+'</td></tr>'});
+ h+='</table><p class="big" id="mhours">'+m.hours+'시간 <span class="sub">('+m.totalMinutes+'분, 병렬 합산)</span></p><div class="sub">제외 '+m.excluded+'건(민감 분야 '+m.excludedPrivacy+' · 종료 기록 없음·24시간 초과 '+m.noEnd+'). 합계는 동시에 돈 작업의 합이라 달력 시간이 아닙니다.</div></div>';
+ h+='<h2 style="margin-top:14px">지도사 결과보고서 칸에 옮겨 적을 문단</h2><pre id="supervisor" style="white-space:pre-wrap;font-size:13px">'+esc(sv.text)+'</pre>';
+ h+='<div class="sub" id="firstPath">첫 영수증까지 &mdash; 사람이 처음 써서 걸린 시간: '+fp.humanLabel+'. 키·서버 없는 경로의 단계·클릭(코드로 확인): '+fp.keyless.steps+'단계·클릭 '+fp.keyless.clicks+'회('+esc(fp.keyless.how)+'), 본인 기록 붙여넣기는 '+fp.ownPaste.steps+'단계·클릭 '+fp.ownPaste.clicks+'회.</div>';
+ o.innerHTML=h}catch(e){o.textContent='오류: '+e.message}};
+$('btnRc').onclick=render;
+$('btnLoad').onclick=function(){fetch('data/sample-log-synthetic.txt').then(function(r){return r.text()}).then(function(t){$('log').value=t.trim();state.table=R.TABLE[ind.value];ruleLocal();render()}).catch(function(){$('banner').textContent='시연 서버 없이 파일로 열면 불러올 수 없습니다. data 폴더의 파일을 복사해 붙여 넣으십시오.'})};
+$('btnClear').onclick=function(){$('log').value='';$('banner').textContent='입력한 기록은 이 컴퓨터의 시연 서버를 거쳐 처리됩니다.';render()};
+ind.onchange=function(){buildDiag();state.table=null;state.diag=null;$('log').value='';$('banner').textContent='업종을 바꿨습니다. 이 업종의 업무 설명과 기록을 넣어 주십시오.';$('diagOut').innerHTML='';render()};
+var FREE=$('log').value;$('log').value=SAMPLE_LOG;$('btnFree').onclick=function(){$('log').value=FREE;render()};
+buildDiag();checkServer().then(function(){ruleLocal();render()});
+</script></body></html>

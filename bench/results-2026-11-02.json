@@ -1,0 +1,1338 @@
+{
+ "date": "2026-11-02",
+ "model": "gemini-3.5-flash-lite",
+ "sampleSha": {
+  "classify": "071bd92c5849",
+  "diagnose": "ad47937258c0"
+ },
+ "price": {
+  "inPerM": 0.3,
+  "outPerM": 2.5,
+  "note": "유료 등급 공시가. 실제 이번 호출은 무료 등급이라 청구 0원"
+ },
+ "classify": {
+  "n": 36,
+  "industries": {
+   "식당": 12,
+   "소매": 12,
+   "제조": 12
+  },
+  "ruleAcc": {
+   "k": 25,
+   "n": 36,
+   "pct": 69.4,
+   "ci95": [
+    53.1,
+    82
+   ]
+  },
+  "ruleByKind": {
+   "직접": {
+    "k": 15,
+    "n": 15
+   },
+   "바꿔말함": {
+    "k": 2,
+    "n": 10
+   },
+   "오답함정": {
+    "k": 8,
+    "n": 11
+   }
+  },
+  "aiBatchAcc": {
+   "k": 36,
+   "n": 36,
+   "pct": 100,
+   "ci95": [
+    90.4,
+    100
+   ]
+  },
+  "aiBatchByKind": {
+   "직접": {
+    "k": 15,
+    "n": 15
+   },
+   "바꿔말함": {
+    "k": 10,
+    "n": 10
+   },
+   "오답함정": {
+    "k": 11,
+    "n": 11
+   }
+  },
+  "aiBatchStatus": {
+   "k": 36,
+   "n": 36
+  },
+  "aiBatchFallbackLines": 0,
+  "aiSingleAcc": {
+   "k": 36,
+   "n": 36,
+   "pct": 100,
+   "ci95": [
+    90.4,
+    100
+   ]
+  },
+  "aiSingleByKind": {
+   "직접": {
+    "k": 15,
+    "n": 15
+   },
+   "바꿔말함": {
+    "k": 10,
+    "n": 10
+   },
+   "오답함정": {
+    "k": 11,
+    "n": 11
+   }
+  },
+  "aiSingleStatus": {
+   "k": 36,
+   "n": 36
+  },
+  "aiSingleFallbackLines": 0,
+  "batch": {
+   "calls": 3,
+   "msMedian": 1298,
+   "tokens": {
+    "in": 1055,
+    "out": 891,
+    "ms": 3962
+   },
+   "usdTotal": 0.002544,
+   "usdPerLine": 0.00007066666666666666
+  },
+  "single": {
+   "calls": 36,
+   "msMedian": 661,
+   "msP95": 937,
+   "tokens": {
+    "in": 6846,
+    "out": 1224,
+    "ms": 24561
+   },
+   "usdTotal": 0.005113799999999999,
+   "usdPerLine": 0.00014204999999999998
+  },
+  "misses": [
+   {
+    "id": 2,
+    "text": "손님 카톡: 토요일 저녁 6명 자리 되나요 → 초안 답장 전송",
+    "truth": "reserve",
+    "rule": null,
+    "aiBatch": "reserve",
+    "aiSingle": "reserve"
+   },
+   {
+    "id": 5,
+    "text": "'맛있게 먹었어요' 후기에 감사 댓글 달아줌",
+    "truth": "review",
+    "rule": null,
+    "aiBatch": "review",
+    "aiSingle": "review"
+   },
+   {
+    "id": 6,
+    "text": "내일 쓸 양파 계란 남은 개수 적어서 사장님께 보냄",
+    "truth": "order",
+    "rule": null,
+    "aiBatch": "order",
+    "aiSingle": "order"
+   },
+   {
+    "id": 15,
+    "text": "원피스 소재 사이즈 설명문 초안 생성",
+    "truth": "desc",
+    "rule": null,
+    "aiBatch": "desc",
+    "aiSingle": "desc"
+   },
+   {
+    "id": 18,
+    "text": "택배사 엑셀에 주문 내역 옮겨 담기 실패 오류",
+    "truth": "invoice",
+    "rule": null,
+    "aiBatch": "invoice",
+    "aiSingle": "invoice"
+   },
+   {
+    "id": 21,
+    "text": "재고 수량 맞춰봄(문의 아님)",
+    "truth": null,
+    "rule": "cs",
+    "aiBatch": null,
+    "aiSingle": null
+   },
+   {
+    "id": 22,
+    "text": "거래처에 단가 문의 전화",
+    "truth": null,
+    "rule": "cs",
+    "aiBatch": null,
+    "aiSingle": null
+   },
+   {
+    "id": 26,
+    "text": "단가표 보고 부품 20개 가격 산출해서 문서로 정리",
+    "truth": "quote",
+    "rule": null,
+    "aiBatch": "quote",
+    "aiSingle": "quote"
+   },
+   {
+    "id": 28,
+    "text": "라인 2 가동 시간 불량 건수 메모를 보고서 형태로 정리",
+    "truth": "report",
+    "rule": null,
+    "aiBatch": "report",
+    "aiSingle": "report"
+   },
+   {
+    "id": 32,
+    "text": "창고 자재 남은 수량 확인해서 표에 반영",
+    "truth": "stock",
+    "rule": null,
+    "aiBatch": "stock",
+    "aiSingle": "stock"
+   },
+   {
+    "id": 35,
+    "text": "견적 단계 없이 샘플 먼저 보내달라는 요청 전화 받음",
+    "truth": null,
+    "rule": "quote",
+    "aiBatch": null,
+    "aiSingle": null
+   }
+  ]
+ },
+ "diagnose": {
+  "n": 10,
+  "reps": 2,
+  "calls": 20,
+  "truthTasks": 48,
+  "aiValid": 19,
+  "aiRecall": 45,
+  "aiPerWeekExact": 45,
+  "ruleRecall": 42,
+  "rulePerWeekExact": 40,
+  "msMedian": 944,
+  "tokens": {
+   "in": 5576,
+   "out": 3540,
+   "ms": 19140
+  },
+  "usdPerCall": 0.0005261399999999999,
+  "results": [
+   {
+    "id": 1,
+    "source": "AI",
+    "usage": {
+     "in": 297,
+     "out": 161,
+     "ms": 857
+    },
+    "ai": [
+     {
+      "found": true,
+      "exact": true
+     },
+     {
+      "found": true,
+      "exact": true
+     }
+    ],
+    "rule": [
+     {
+      "found": true,
+      "exact": true
+     },
+     {
+      "found": true,
+      "exact": false
+     }
+    ],
+    "aiTasks": [
+     {
+      "name": "예약 문의 전화 및 카톡 응대",
+      "perWeek": 70,
+      "est": 210,
+      "tools": [
+       "챗봇 서비스",
+       "답장 초안 생성"
+      ]
+     },
+     {
+      "name": "리뷰 답글 작성",
+      "perWeek": 15,
+      "est": 45,
+      "tools": [
+       "답장 초안 생성",
+       "AI 텍스트 도구"
+      ]
+     }
+    ]
+   },
+   {
+    "id": 1,
+    "source": "AI",
+    "usage": {
+     "in": 297,
+     "out": 72,
+     "ms": 711
+    },
+    "ai": [
+     {
+      "found": true,
+      "exact": true
+     },
+     {
+      "found": true,
+      "exact": true
+     }
+    ],
+    "rule": [
+     {
+      "found": true,
+      "exact": true
+     },
+     {
+      "found": true,
+      "exact": false
+     }
+    ],
+    "aiTasks": [
+     {
+      "name": "예약 문의 응대",
+      "perWeek": 70,
+      "est": 210,
+      "tools": [
+       "AI 답장 초안 생성",
+       "챗봇"
+      ]
+     },
+     {
+      "name": "리뷰 답글 작성",
+      "perWeek": 15,
+      "est": 45,
+      "tools": [
+       "AI 리뷰 답글 생성"
+      ]
+     }
+    ]
+   },
+   {
+    "id": 2,
+    "source": "AI",
+    "usage": {
+     "in": 275,
+     "out": 173,
+     "ms": 969
+    },
+    "ai": [
+     {
+      "found": true,
+      "exact": true
+     },
+     {
+      "found": true,
+      "exact": true
+     }
+    ],
+    "rule": [
+     {
+      "found": true,
+      "exact": true
+     },
+     {
+      "found": false,
+      "exact": false
+     }
+    ],
+    "aiTasks": [
+     {
+      "name": "발주 재고 정리",
+      "perWeek": 5,
+      "est": 125,
+      "tools": [
+       "재고 관리 자동화 도구",
+       "발주서 초안 생성기"
+      ]
+     },
+     {
+      "name": "인스타 공지 글 작성 및 업로드",
+      "perWeek": 4,
+      "est": 80,
+      "tools": [
+       "소셜미디어 콘텐츠 생성기",
+       "인스타그램 캡션 작성 도구"
+      ]
+     }
+    ]
+   },
+   {
+    "id": 2,
+    "source": "AI",
+    "usage": {
+     "in": 275,
+     "out": 169,
+     "ms": 945
+    },
+    "ai": [
+     {
+      "found": true,
+      "exact": true
+     },
+     {
+      "found": true,
+      "exact": true
+     }
+    ],
+    "rule": [
+     {
+      "found": true,
+      "exact": true
+     },
+     {
+      "found": false,
+      "exact": false
+     }
+    ],
+    "aiTasks": [
+     {
+      "name": "발주 재고 정리",
+      "perWeek": 5,
+      "est": 125,
+      "tools": [
+       "재고 관리 자동화 봇",
+       "발주서 초안 생성 도구"
+      ]
+     },
+     {
+      "name": "인스타 공지 글 작성 및 업로드",
+      "perWeek": 4,
+      "est": 80,
+      "tools": [
+       "SNS 콘텐츠 초안 생성 AI",
+       "이미지 생성 AI"
+      ]
+     }
+    ]
+   },
+   {
+    "id": 3,
+    "source": "AI",
+    "usage": {
+     "in": 274,
+     "out": 152,
+     "ms": 943
+    },
+    "ai": [
+     {
+      "found": true,
+      "exact": true
+     },
+     {
+      "found": true,
+      "exact": true
+     }
+    ],
+    "rule": [
+     {
+      "found": true,
+      "exact": true
+     },
+     {
+      "found": true,
+      "exact": true
+     }
+    ],
+    "aiTasks": [
+     {
+      "name": "손님 문의 답장",
+      "perWeek": 42,
+      "est": 84,
+      "tools": [
+       "답장 초안 생성",
+       "챗봇"
+      ]
+     },
+     {
+      "name": "리뷰 답글",
+      "perWeek": 8,
+      "est": 32,
+      "tools": [
+       "리뷰 답글 생성",
+       "텍스트 요약"
+      ]
+     }
+    ]
+   },
+   {
+    "id": 3,
+    "source": "AI",
+    "usage": {
+     "in": 274,
+     "out": 158,
+     "ms": 826
+    },
+    "ai": [
+     {
+      "found": true,
+      "exact": true
+     },
+     {
+      "found": true,
+      "exact": true
+     }
+    ],
+    "rule": [
+     {
+      "found": true,
+      "exact": true
+     },
+     {
+      "found": true,
+      "exact": true
+     }
+    ],
+    "aiTasks": [
+     {
+      "name": "손님 문의 답장",
+      "perWeek": 42,
+      "est": 84,
+      "tools": [
+       "답장 초안 생성 AI",
+       "챗봇 서비스"
+      ]
+     },
+     {
+      "name": "리뷰 답글",
+      "perWeek": 8,
+      "est": 24,
+      "tools": [
+       "리뷰 답글 생성 AI",
+       "자동 템플릿 도구"
+      ]
+     }
+    ]
+   },
+   {
+    "id": 4,
+    "source": "규칙",
+    "error": "유효한 업무가 없습니다",
+    "usage": {
+     "in": 282,
+     "out": 235,
+     "ms": 976
+    },
+    "ai": [
+     {
+      "found": false,
+      "exact": false
+     },
+     {
+      "found": false,
+      "exact": false
+     },
+     {
+      "found": false,
+      "exact": false
+     }
+    ],
+    "rule": [
+     {
+      "found": true,
+      "exact": true
+     },
+     {
+      "found": true,
+      "exact": true
+     },
+     {
+      "found": true,
+      "exact": true
+     }
+    ],
+    "aiTasks": []
+   },
+   {
+    "id": 4,
+    "source": "AI",
+    "usage": {
+     "in": 282,
+     "out": 227,
+     "ms": 1114
+    },
+    "ai": [
+     {
+      "found": true,
+      "exact": true
+     },
+     {
+      "found": true,
+      "exact": true
+     },
+     {
+      "found": true,
+      "exact": true
+     }
+    ],
+    "rule": [
+     {
+      "found": true,
+      "exact": true
+     },
+     {
+      "found": true,
+      "exact": true
+     },
+     {
+      "found": true,
+      "exact": true
+     }
+    ],
+    "aiTasks": [
+     {
+      "name": "고객 문의 답장",
+      "perWeek": 84,
+      "est": 336,
+      "tools": [
+       "답장 초안 생성",
+       "챗봇 응대"
+      ]
+     },
+     {
+      "name": "송장 정리",
+      "perWeek": 20,
+      "est": 140,
+      "tools": [
+       "데이터 분류",
+       "엑셀 자동화"
+      ]
+     },
+     {
+      "name": "상품 설명 새로 쓰기",
+      "perWeek": 6,
+      "est": 120,
+      "tools": [
+       "상품 카피라이팅 생성",
+       "상세페이지 요약"
+      ]
+     }
+    ]
+   },
+   {
+    "id": 5,
+    "source": "AI",
+    "usage": {
+     "in": 273,
+     "out": 159,
+     "ms": 889
+    },
+    "ai": [
+     {
+      "found": true,
+      "exact": true
+     },
+     {
+      "found": true,
+      "exact": true
+     }
+    ],
+    "rule": [
+     {
+      "found": true,
+      "exact": true
+     },
+     {
+      "found": true,
+      "exact": true
+     }
+    ],
+    "aiTasks": [
+     {
+      "name": "주문서 정리",
+      "perWeek": 35,
+      "est": 70,
+      "tools": [
+       "데이터 요약",
+       "스프레드시트 자동화"
+      ]
+     },
+     {
+      "name": "후기 답글 작성",
+      "perWeek": 10,
+      "est": 40,
+      "tools": [
+       "답장 초안 생성",
+       "고객 응대 챗봇"
+      ]
+     }
+    ]
+   },
+   {
+    "id": 5,
+    "source": "AI",
+    "usage": {
+     "in": 273,
+     "out": 144,
+     "ms": 808
+    },
+    "ai": [
+     {
+      "found": true,
+      "exact": true
+     },
+     {
+      "found": true,
+      "exact": true
+     }
+    ],
+    "rule": [
+     {
+      "found": true,
+      "exact": true
+     },
+     {
+      "found": true,
+      "exact": true
+     }
+    ],
+    "aiTasks": [
+     {
+      "name": "주문서 정리",
+      "perWeek": 35,
+      "est": 70,
+      "tools": [
+       "텍스트 요약 및 구조화 AI"
+      ]
+     },
+     {
+      "name": "후기 답글 달기",
+      "perWeek": 10,
+      "est": 30,
+      "tools": [
+       "답장 초안 생성 AI"
+      ]
+     }
+    ]
+   },
+   {
+    "id": 6,
+    "source": "AI",
+    "usage": {
+     "in": 271,
+     "out": 138,
+     "ms": 1276
+    },
+    "ai": [
+     {
+      "found": true,
+      "exact": true
+     },
+     {
+      "found": true,
+      "exact": true
+     }
+    ],
+    "rule": [
+     {
+      "found": true,
+      "exact": true
+     },
+     {
+      "found": true,
+      "exact": true
+     }
+    ],
+    "aiTasks": [
+     {
+      "name": "고객 답장",
+      "perWeek": 25,
+      "est": 100,
+      "tools": [
+       "답장 초안 생성"
+      ]
+     },
+     {
+      "name": "상품 설명 작성",
+      "perWeek": 3,
+      "est": 60,
+      "tools": [
+       "상품 설명 초안 생성"
+      ]
+     }
+    ]
+   },
+   {
+    "id": 6,
+    "source": "AI",
+    "usage": {
+     "in": 271,
+     "out": 166,
+     "ms": 932
+    },
+    "ai": [
+     {
+      "found": true,
+      "exact": true
+     },
+     {
+      "found": true,
+      "exact": true
+     }
+    ],
+    "rule": [
+     {
+      "found": true,
+      "exact": true
+     },
+     {
+      "found": true,
+      "exact": true
+     }
+    ],
+    "aiTasks": [
+     {
+      "name": "고객 답장",
+      "perWeek": 25,
+      "est": 100,
+      "tools": [
+       "고객 응대 답변 초안 생성",
+       "챗봇 및 메시지 어시스턴트"
+      ]
+     },
+     {
+      "name": "상품 설명 작성",
+      "perWeek": 3,
+      "est": 60,
+      "tools": [
+       "상품 소개글 생성 AI",
+       "마케팅 문구 작성기"
+      ]
+     }
+    ]
+   },
+   {
+    "id": 7,
+    "source": "AI",
+    "usage": {
+     "in": 271,
+     "out": 160,
+     "ms": 874
+    },
+    "ai": [
+     {
+      "found": true,
+      "exact": true
+     },
+     {
+      "found": true,
+      "exact": true
+     }
+    ],
+    "rule": [
+     {
+      "found": true,
+      "exact": true
+     },
+     {
+      "found": true,
+      "exact": true
+     }
+    ],
+    "aiTasks": [
+     {
+      "name": "작업일지 정리",
+      "perWeek": 21,
+      "est": 252,
+      "tools": [
+       "텍스트 요약",
+       "데이터 정리 도우미"
+      ]
+     },
+     {
+      "name": "견적서 초안 작성",
+      "perWeek": 5,
+      "est": 125,
+      "tools": [
+       "답장 초안 생성",
+       "문서 작성 도우미"
+      ]
+     }
+    ]
+   },
+   {
+    "id": 7,
+    "source": "AI",
+    "usage": {
+     "in": 271,
+     "out": 161,
+     "ms": 874
+    },
+    "ai": [
+     {
+      "found": true,
+      "exact": true
+     },
+     {
+      "found": true,
+      "exact": true
+     }
+    ],
+    "rule": [
+     {
+      "found": true,
+      "exact": true
+     },
+     {
+      "found": true,
+      "exact": true
+     }
+    ],
+    "aiTasks": [
+     {
+      "name": "작업일지 정리",
+      "perWeek": 21,
+      "est": 252,
+      "tools": [
+       "텍스트 요약 도구",
+       "생산성 도구"
+      ]
+     },
+     {
+      "name": "견적서 초안 작성",
+      "perWeek": 5,
+      "est": 125,
+      "tools": [
+       "답장 초안 생성",
+       "문서 작성 도구"
+      ]
+     }
+    ]
+   },
+   {
+    "id": 8,
+    "source": "AI",
+    "usage": {
+     "in": 276,
+     "out": 74,
+     "ms": 730
+    },
+    "ai": [
+     {
+      "found": true,
+      "exact": true
+     },
+     {
+      "found": true,
+      "exact": true
+     }
+    ],
+    "rule": [
+     {
+      "found": true,
+      "exact": true
+     },
+     {
+      "found": true,
+      "exact": true
+     }
+    ],
+    "aiTasks": [
+     {
+      "name": "거래처 메일 초안 작성",
+      "perWeek": 15,
+      "est": 105,
+      "tools": [
+       "메일 답장 초안 생성"
+      ]
+     },
+     {
+      "name": "재고표 갱신",
+      "perWeek": 4,
+      "est": 60,
+      "tools": [
+       "데이터 정리 및 요약"
+      ]
+     }
+    ]
+   },
+   {
+    "id": 8,
+    "source": "AI",
+    "usage": {
+     "in": 276,
+     "out": 166,
+     "ms": 1020
+    },
+    "ai": [
+     {
+      "found": true,
+      "exact": true
+     },
+     {
+      "found": true,
+      "exact": true
+     }
+    ],
+    "rule": [
+     {
+      "found": true,
+      "exact": true
+     },
+     {
+      "found": true,
+      "exact": true
+     }
+    ],
+    "aiTasks": [
+     {
+      "name": "거래처 메일 초안 작성",
+      "perWeek": 15,
+      "est": 150,
+      "tools": [
+       "답장 초안 생성",
+       "이메일 작성 어시스턴트"
+      ]
+     },
+     {
+      "name": "재고표 갱신",
+      "perWeek": 4,
+      "est": 80,
+      "tools": [
+       "재고 관리 자동화",
+       "데이터 정리 도구"
+      ]
+     }
+    ]
+   },
+   {
+    "id": 9,
+    "source": "AI",
+    "usage": {
+     "in": 279,
+     "out": 237,
+     "ms": 999
+    },
+    "ai": [
+     {
+      "found": true,
+      "exact": true
+     },
+     {
+      "found": true,
+      "exact": true
+     },
+     {
+      "found": true,
+      "exact": true
+     }
+    ],
+    "rule": [
+     {
+      "found": true,
+      "exact": true
+     },
+     {
+      "found": true,
+      "exact": true
+     },
+     {
+      "found": true,
+      "exact": true
+     }
+    ],
+    "aiTasks": [
+     {
+      "name": "작업일지 정리",
+      "perWeek": 10,
+      "est": 150,
+      "tools": [
+       "작업일지 자동 요약",
+       "보고서 초안 생성"
+      ]
+     },
+     {
+      "name": "거래처 메일",
+      "perWeek": 14,
+      "est": 98,
+      "tools": [
+       "이메일 답장 초안 생성",
+       "비즈니스 메일 작성"
+      ]
+     },
+     {
+      "name": "견적서",
+      "perWeek": 2,
+      "est": 40,
+      "tools": [
+       "견적서 초안 생성",
+       "엑셀 자동화"
+      ]
+     }
+    ]
+   },
+   {
+    "id": 9,
+    "source": "AI",
+    "usage": {
+     "in": 279,
+     "out": 232,
+     "ms": 1089
+    },
+    "ai": [
+     {
+      "found": true,
+      "exact": true
+     },
+     {
+      "found": true,
+      "exact": true
+     },
+     {
+      "found": true,
+      "exact": true
+     }
+    ],
+    "rule": [
+     {
+      "found": true,
+      "exact": true
+     },
+     {
+      "found": true,
+      "exact": true
+     },
+     {
+      "found": true,
+      "exact": true
+     }
+    ],
+    "aiTasks": [
+     {
+      "name": "작업일지 정리",
+      "perWeek": 10,
+      "est": 250,
+      "tools": [
+       "보고서 초안 생성",
+       "텍스트 요약"
+      ]
+     },
+     {
+      "name": "거래처 메일",
+      "perWeek": 14,
+      "est": 168,
+      "tools": [
+       "이메일 답장 초안",
+       "비즈니스 글쓰기"
+      ]
+     },
+     {
+      "name": "견적서",
+      "perWeek": 2,
+      "est": 60,
+      "tools": [
+       "견적서 초안 생성",
+       "표 데이터 정리"
+      ]
+     }
+    ]
+   },
+   {
+    "id": 10,
+    "source": "AI",
+    "usage": {
+     "in": 290,
+     "out": 264,
+     "ms": 1222
+    },
+    "ai": [
+     {
+      "found": true,
+      "exact": true
+     },
+     {
+      "found": true,
+      "exact": true
+     },
+     {
+      "found": true,
+      "exact": true
+     },
+     {
+      "found": true,
+      "exact": true
+     }
+    ],
+    "rule": [
+     {
+      "found": true,
+      "exact": true
+     },
+     {
+      "found": false,
+      "exact": false
+     },
+     {
+      "found": true,
+      "exact": true
+     },
+     {
+      "found": false,
+      "exact": false
+     }
+    ],
+    "aiTasks": [
+     {
+      "name": "예약 문의",
+      "perWeek": 30,
+      "est": 120,
+      "tools": [
+       "답장 초안 생성"
+      ]
+     },
+     {
+      "name": "발주 재고 메모",
+      "perWeek": 3,
+      "est": 45,
+      "tools": [
+       "텍스트 요약 및 정리"
+      ]
+     },
+     {
+      "name": "인스타 글",
+      "perWeek": 2,
+      "est": 40,
+      "tools": [
+       "콘텐츠 초안 생성"
+      ]
+     },
+     {
+      "name": "리뷰 답글",
+      "perWeek": 6,
+      "est": 24,
+      "tools": [
+       "답장 초안 생성"
+      ]
+     }
+    ]
+   },
+   {
+    "id": 10,
+    "source": "AI",
+    "usage": {
+     "in": 290,
+     "out": 292,
+     "ms": 1086
+    },
+    "ai": [
+     {
+      "found": true,
+      "exact": true
+     },
+     {
+      "found": true,
+      "exact": true
+     },
+     {
+      "found": true,
+      "exact": true
+     },
+     {
+      "found": true,
+      "exact": true
+     }
+    ],
+    "rule": [
+     {
+      "found": true,
+      "exact": true
+     },
+     {
+      "found": false,
+      "exact": false
+     },
+     {
+      "found": true,
+      "exact": true
+     },
+     {
+      "found": false,
+      "exact": false
+     }
+    ],
+    "aiTasks": [
+     {
+      "name": "예약 문의",
+      "perWeek": 30,
+      "est": 60,
+      "tools": [
+       "답장 초안 생성",
+       "챗봇 응대"
+      ]
+     },
+     {
+      "name": "발주 재고 메모",
+      "perWeek": 3,
+      "est": 45,
+      "tools": [
+       "재고 관리",
+       "텍스트 요약"
+      ]
+     },
+     {
+      "name": "인스타 글",
+      "perWeek": 2,
+      "est": 40,
+      "tools": [
+       "SNS 콘텐츠 생성",
+       "문구 작성 도우미"
+      ]
+     },
+     {
+      "name": "리뷰 답글",
+      "perWeek": 6,
+      "est": 24,
+      "tools": [
+       "답장 초안 생성",
+       "리뷰 분석"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "fullLog": {
+  "lines": 149,
+  "calls": 4,
+  "fallbackLines": 0,
+  "ai": {
+   "counted": 140,
+   "failed": 6,
+   "unclassified": 3,
+   "minutes": 490,
+   "won": 84280
+  },
+  "rule": {
+   "counted": 140,
+   "failed": 6,
+   "unclassified": 3,
+   "minutes": 490,
+   "won": 84280
+  },
+  "ms": 10187,
+  "tokens": {
+   "in": 4777,
+   "out": 4129,
+   "ms": 10187
+  },
+  "usd": 0.0117556
+ },
+ "apiCalls": 63
+}

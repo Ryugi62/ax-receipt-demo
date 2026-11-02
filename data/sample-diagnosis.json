@@ -1,0 +1,21 @@
+{
+ "industry": "식당",
+ "answers": [
+  {
+   "code": "reserve",
+   "perWeek": 40
+  },
+  {
+   "code": "review",
+   "perWeek": 15
+  },
+  {
+   "code": "order",
+   "perWeek": 5
+  },
+  {
+   "code": "sns",
+   "perWeek": 4
+  }
+ ]
+}

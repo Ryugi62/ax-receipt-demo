@@ -1,0 +1,10 @@
+{"id":1,"industry":"식당","text":"예약 문의 전화랑 카톡이 하루에 10건쯤 오고 답하는 데 한 건에 4분 정도 걸려요. 리뷰는 일주일에 15개 정도 답글을 달아요.","truth":[{"key":"예약","perWeek":70},{"key":"리뷰","perWeek":15}]}
+{"id":2,"industry":"식당","text":"인스타 공지 글은 주 4번 올리고, 발주 재고 정리는 주 5번 합니다.","truth":[{"key":"공지","perWeek":4},{"key":"재고","perWeek":5}]}
+{"id":3,"industry":"식당","text":"손님 문의 답장은 매일 6건 정도예요. 리뷰 답글은 한 주에 8건.","truth":[{"key":"문의","perWeek":42},{"key":"리뷰","perWeek":8}]}
+{"id":4,"industry":"소매","text":"고객 문의 답장이 하루 12건, 상품 설명 새로 쓰는 게 주 6개, 송장 정리는 주 20건 해요.","truth":[{"key":"문의","perWeek":84},{"key":"설명","perWeek":6},{"key":"송장","perWeek":20}]}
+{"id":5,"industry":"소매","text":"후기 답글을 주 10개 달고 있고 주문서 정리는 하루 5건입니다.","truth":[{"key":"후기","perWeek":10},{"key":"주문서","perWeek":35}]}
+{"id":6,"industry":"소매","text":"상품 설명 작성은 주 3개 정도이고 고객 답장은 주 25건 정도예요.","truth":[{"key":"설명","perWeek":3},{"key":"답장","perWeek":25}]}
+{"id":7,"industry":"제조","text":"견적서 초안은 주 5건 쓰고 작업일지는 하루 3건 정리해요.","truth":[{"key":"견적","perWeek":5},{"key":"일지","perWeek":21}]}
+{"id":8,"industry":"제조","text":"거래처 메일 초안을 주 15통, 재고표 갱신을 주 4번 합니다.","truth":[{"key":"메일","perWeek":15},{"key":"재고","perWeek":4}]}
+{"id":9,"industry":"제조","text":"작업일지 정리 주 10건, 견적서 주 2건, 거래처 메일은 하루 2통.","truth":[{"key":"일지","perWeek":10},{"key":"견적","perWeek":2},{"key":"메일","perWeek":14}]}
+{"id":10,"industry":"식당","text":"예약 문의는 주 30건, 인스타 글은 주 2건, 리뷰 답글은 주 6건, 발주 재고 메모는 주 3번이에요.","truth":[{"key":"예약","perWeek":30},{"key":"인스타","perWeek":2},{"key":"리뷰","perWeek":6},{"key":"재고","perWeek":3}]}

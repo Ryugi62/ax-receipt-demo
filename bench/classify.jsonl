@@ -1,0 +1,36 @@
+{"id": 1, "industry": "식당", "text": "예약 문의 자동답장 발송 완료", "truth": "reserve", "truthStatus": "성공", "kind": "직접"}
+{"id": 2, "industry": "식당", "text": "손님 카톡: 토요일 저녁 6명 자리 되나요 → 초안 답장 전송", "truth": "reserve", "truthStatus": "성공", "kind": "바꿔말함"}
+{"id": 3, "industry": "식당", "text": "네이버 문의 알림에 영업시간 안내 답변 보냄", "truth": "reserve", "truthStatus": "성공", "kind": "직접"}
+{"id": 4, "industry": "식당", "text": "리뷰 별점 2개 달린 건 사과 답글 초안 게시", "truth": "review", "truthStatus": "성공", "kind": "직접"}
+{"id": 5, "industry": "식당", "text": "'맛있게 먹었어요' 후기에 감사 댓글 달아줌", "truth": "review", "truthStatus": "성공", "kind": "바꿔말함"}
+{"id": 6, "industry": "식당", "text": "내일 쓸 양파 계란 남은 개수 적어서 사장님께 보냄", "truth": "order", "truthStatus": "성공", "kind": "바꿔말함"}
+{"id": 7, "industry": "식당", "text": "발주서 초안 생성했는데 거래처 전송 안 됨 오류", "truth": "order", "truthStatus": "실패", "kind": "직접"}
+{"id": 8, "industry": "식당", "text": "인스타 신메뉴 소개 글 초안 작성", "truth": "sns", "truthStatus": "성공", "kind": "직접"}
+{"id": 9, "industry": "식당", "text": "추석 연휴 휴무 공지 문구 만들어 붙임", "truth": "sns", "truthStatus": "성공", "kind": "직접"}
+{"id": 10, "industry": "식당", "text": "주방 가스 점검 일정 확인", "truth": null, "truthStatus": "성공", "kind": "오답함정"}
+{"id": 11, "industry": "식당", "text": "직원 근무표 수정", "truth": null, "truthStatus": "성공", "kind": "오답함정"}
+{"id": 12, "industry": "식당", "text": "재료 입고 사진 정리 폴더에 옮김", "truth": null, "truthStatus": "성공", "kind": "오답함정(재고 낱말 없음)"}
+{"id": 13, "industry": "소매", "text": "고객 문의: 배송 언제 오나요 → 답장 초안 발송", "truth": "cs", "truthStatus": "성공", "kind": "직접"}
+{"id": 14, "industry": "소매", "text": "교환 가능하냐는 메시지에 정책 안내 답장", "truth": "cs", "truthStatus": "성공", "kind": "바꿔말함"}
+{"id": 15, "industry": "소매", "text": "원피스 소재 사이즈 설명문 초안 생성", "truth": "desc", "truthStatus": "성공", "kind": "바꿔말함"}
+{"id": 16, "industry": "소매", "text": "상품설명 문구 3개 상품 작성 완료", "truth": "desc", "truthStatus": "성공", "kind": "직접"}
+{"id": 17, "industry": "소매", "text": "주문서 12건 송장번호 붙여 정리", "truth": "invoice", "truthStatus": "성공", "kind": "직접"}
+{"id": 18, "industry": "소매", "text": "택배사 엑셀에 주문 내역 옮겨 담기 실패 오류", "truth": "invoice", "truthStatus": "실패", "kind": "바꿔말함"}
+{"id": 19, "industry": "소매", "text": "후기 답글 초안 게시", "truth": "review", "truthStatus": "성공", "kind": "직접"}
+{"id": 20, "industry": "소매", "text": "사진 후기 올려주신 분께 감사 댓글", "truth": "review", "truthStatus": "성공", "kind": "바꿔말함"}
+{"id": 21, "industry": "소매", "text": "재고 수량 맞춰봄(문의 아님)", "truth": null, "truthStatus": "성공", "kind": "오답함정(문의 낱말 없음 재고)"}
+{"id": 22, "industry": "소매", "text": "거래처에 단가 문의 전화", "truth": null, "truthStatus": "성공", "kind": "오답함정(문의 낱말이지만 고객 아님)"}
+{"id": 23, "industry": "소매", "text": "매장 진열 바꿈", "truth": null, "truthStatus": "성공", "kind": "오답함정"}
+{"id": 24, "industry": "소매", "text": "SNS 광고 문구 고민", "truth": null, "truthStatus": "성공", "kind": "오답함정"}
+{"id": 25, "industry": "제조", "text": "거래처 A사 견적서 초안 작성", "truth": "quote", "truthStatus": "성공", "kind": "직접"}
+{"id": 26, "industry": "제조", "text": "단가표 보고 부품 20개 가격 산출해서 문서로 정리", "truth": "quote", "truthStatus": "성공", "kind": "바꿔말함"}
+{"id": 27, "industry": "제조", "text": "오늘 작업일지 정리 완료", "truth": "report", "truthStatus": "성공", "kind": "직접"}
+{"id": 28, "industry": "제조", "text": "라인 2 가동 시간 불량 건수 메모를 보고서 형태로 정리", "truth": "report", "truthStatus": "성공", "kind": "바꿔말함"}
+{"id": 29, "industry": "제조", "text": "거래처 납기 확인 메일 초안 발송", "truth": "mail", "truthStatus": "성공", "kind": "직접"}
+{"id": 30, "industry": "제조", "text": "납품 지연 사과 이메일 문안 작성 후 전송 오류", "truth": "mail", "truthStatus": "실패", "kind": "직접"}
+{"id": 31, "industry": "제조", "text": "볼트 부족분 수량 갱신 재고표 입력", "truth": "stock", "truthStatus": "성공", "kind": "직접"}
+{"id": 32, "industry": "제조", "text": "창고 자재 남은 수량 확인해서 표에 반영", "truth": "stock", "truthStatus": "성공", "kind": "바꿔말함"}
+{"id": 33, "industry": "제조", "text": "점심 회식 장소 투표", "truth": null, "truthStatus": "성공", "kind": "오답함정"}
+{"id": 34, "industry": "제조", "text": "기계 정기 점검 스티커 부착", "truth": null, "truthStatus": "성공", "kind": "오답함정"}
+{"id": 35, "industry": "제조", "text": "견적 단계 없이 샘플 먼저 보내달라는 요청 전화 받음", "truth": null, "truthStatus": "성공", "kind": "오답함정(견적 낱말이나 업무 아님)"}
+{"id": 36, "industry": "제조", "text": "신입 안전교육", "truth": null, "truthStatus": "성공", "kind": "오답함정"}
